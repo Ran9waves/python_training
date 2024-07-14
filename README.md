@@ -1,2 +1,2 @@
 # python_training
-practical exercices to learn python
+My daily challenges on my way to improve my skills to python :)
