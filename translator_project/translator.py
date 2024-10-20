@@ -17,3 +17,5 @@ if input_from_user == 'a':
     translate_from_file()
 elif input_from_user == 'b':
     translate_from_text()
+else:
+    print("Wrong input!! Exiting program")
