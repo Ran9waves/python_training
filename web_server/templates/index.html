@@ -2,10 +2,11 @@
 <html>
     <head>
         <title>TEST SITE</title>
-        <link rel='stylesheet' type="text/css" href="style.css">
+        <link rel='stylesheet' type="text/css" href="static/style.css">
+        <link rel="shortcut icon" href="{{url_for('static', filename='meh.ico')}}">
     </head>
     <body>
-        Building a site.
-        <script src="script.js"></script>
+        {{ 10 + 2 }}
+        <script src="static/script.js"></script>
     </body>
 </html>
