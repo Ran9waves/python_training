@@ -6,11 +6,10 @@ app =  Flask(__name__) #equivalent of __main__
 def my_home():
     return render_template('index.html')
 
-@app.route('/about.html') #gives extra tools to decoraate the server
-def about():
-    return render_template('about.html')
+@app.route('/<string:page_name>') #accepts dynamically the name of any page
+def html_page(page_name):
+    return render_template(page_name)
 
-
-@app.route('/blog/2020/mantis_shrimp') #gives extra tools to decoraate the server
-def blog2():
-    return 'Best creature ever'
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    return 'form submitted, epic!'
