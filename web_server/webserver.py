@@ -24,14 +24,17 @@ def write_to_csv(data):
         subject = data['subject']
         message = data['message']
         csv_writer = csv.writer(database, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        csv_writer.writerow(email, subject, message')
+        csv_writer.writerow(email, subject, message)
 
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        data = request.form.to_dict() #turns the form data into a dictionary
-        write_to_file(data)
-        return redirect('/thankyou.html')
+        try:
+            data = request.form.to_dict() #turns the form data into a dictionary
+            write_to_csv(data)
+            return redirect('/thankyou.html')
+        except:
+            return 'did not save to database'
     else:
         return 'Something went wrong. Try again!'
